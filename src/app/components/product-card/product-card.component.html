@@ -1,0 +1,14 @@
+<!-- THÔNG TIN 1 SẢN PHẨM -->
+
+<div class="product-card">
+  <!-- Dùng [src] để lấy giá trị hình ảnh từ product.
+   Dấu hỏi ?. là để kiểm tra nếu product có tồn tại trước khi lấy thuộc tính image -->
+  <img [src]="product?.image" alt="{{ product?.proName }}" />
+
+  <h3>{{ product?.proName }}</h3>
+  <p>{{ product?.description }}</p>
+  <p>${{ product?.price }}</p>
+
+  <!-- Nút để thêm sản phẩm vào giỏ hàng. Khi nhấp vào nút, phương thức onAddToCart() sẽ được gọi. -->
+  <button (click)="onAddToCart()">Add to Cart</button>
+</div>

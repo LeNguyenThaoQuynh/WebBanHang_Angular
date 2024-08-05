@@ -1,0 +1,15 @@
+<!-- Thẻ dùng để tạo thanh điều hướng (navbar) -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a href="#" (click)="navigateTo('products')">SHOP</a>
+    <!-- Khi click vào chữ Shop thì quay lại trang chủ -->
+  </div>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a href="#" (click)="navigateTo('products')">Home</a>
+    </li>
+    <!-- Khi click vào chữ Shop thì quay lại trang chủ -->
+    <li class="nav-item"><a href="#" (click)="navigateTo('cart')">Cart</a></li>
+    <!-- Khi click vào Cart thì đi đến giỏ hàng -->
+  </ul>
+</nav>

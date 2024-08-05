@@ -1,0 +1,13 @@
+<!-- DANH SÁCH SẢN PHẨM -->
+<div class="prod-container">
+  <app-product-card
+    *ngFor="let product of products"
+    [product]="product"
+    (addToCart)="addToCart($event)"
+  >
+  </app-product-card>
+</div>
+
+<!-- *ngFor="let product of products": Lặp qua tất cả các sản phẩm trong mảng products -->
+<!-- [product]="product" Truyền dữ liệu sản phẩm vào component app-product-card -->
+<!-- (addToCart)="addToCart($event)" Khi sự kiện addToCart xảy ra trong component app-product-card, gọi phương thức addToCart và truyền dữ liệu sự kiện vào đó -->

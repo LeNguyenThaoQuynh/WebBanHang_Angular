@@ -1,0 +1,52 @@
+<!-- Nếu có sản phẩm, hiển thị bảng giỏ hàng. Nếu giỏ hàng rỗng, hiển thị template 'emptyCart' -->
+<div *ngIf="cart.length > 0; else emptyCart">
+  <!-- Bảng hiển thị các sản phẩm trong giỏ hàng -->
+  <table class="cart-table">
+    <thead>
+      <!--tiêu để của table-->
+      <tr>
+        <!--Hiển thị sản phẩm trong giỏ hàng (<th> là cột tiêu đề nên chữ được in đậm) -->
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Lặp qua từng sản phẩm trong giỏ hàng và hiển thị thông tin của sản phẩm -->
+      <tr *ngFor="let item of cart">
+        <td>
+          <img [src]="item.image" alt="{{ item.proName }}" width="100px" />
+        </td>
+        <!-- Hiển thị thông tin của sản phẩm -->
+        <td>{{ item.proName }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>${{ item.price }}</td>
+        <td>${{ item.quantity * item.price }}</td>
+        <!-- Tổng giá sản phẩm (quantity * price) -->
+        <td>
+          <!-- Nút xóa -->
+          <button (click)="removeFromCart(item.id)" class="remove-button">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Hiển thị tổng giá của tất cả các sản phẩm trong giỏ hàng -->
+  <div class="cart-total">
+    <h3>Total: ${{ getTotalPrice() }}</h3>
+  </div>
+
+  <div class="checkout-container">
+    <button class="checkout-button">Order</button>
+  </div>
+</div>
+
+<!-- Template hiển thị khi giỏ hàng rỗng -->
+<ng-template #emptyCart>
+  <h1>Your cart is empty</h1>
+</ng-template>

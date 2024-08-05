@@ -1,0 +1,15 @@
+.prod-container {
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  text-align: center;
+  background-color: #f5f5f5;
+}

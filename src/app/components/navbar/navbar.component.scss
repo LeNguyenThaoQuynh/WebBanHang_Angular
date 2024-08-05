@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(#db8cdb, #e5cfd8);
+  color: #fff;
+}
+
+.navbar-brand a {
+  color: #2e1631;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item a {
+  color: #2e1631;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}
